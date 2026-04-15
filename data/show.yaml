@@ -1,0 +1,92 @@
+schema_version: '2.1'
+show:
+  id: show_01
+  title: Sample Gund Show
+  subtitle: Initial layout using selected artworks
+  gallery_id: gund_second_floor
+  scoring_profile_id: vienna_wall_basic_v1
+  curator: Applied Algorithms
+  notes: Simple starter show for wall-by-wall design.
+  wall_designs:
+  - wall_id: R2-N
+    candidate_artwork_ids:
+    - A1
+    - A5
+    - A8
+    - A26
+    - A9
+    scoring_profile_id: vienna_wall_basic_v1
+    algorithm_file: wall_greedy_v1.py
+    notes: Classical plus modern starter candidates.
+  - wall_id: R7-S
+    candidate_artwork_ids:
+    - A21
+    - A22
+    - A23
+    - Kenyon-Angels
+    - SKON2
+    scoring_profile_id: vienna_wall_basic_v1
+    algorithm_file: wall_greedy_v1.py
+    notes: Photography and local works.
+  arrangements:
+  - id: ARR_R2N_001
+    title: R2-N Generated Arrangement
+    space_id: R2-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.4959
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 91.08
+          score: 0.7991
+          importance: 0.9
+        visual_balance:
+          raw: 0.0
+          score: 0
+          importance: 0.8
+        wall_utilization:
+          raw: 32.65
+          score: 0.653
+          importance: 0.8
+        thematic_cohesion:
+          raw: 50.75
+          score: 0.889
+          importance: 0.5
+        focal_point:
+          raw: 0.0
+          score: 0
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A26
+      x_ft: 0.12
+      y_ft: 3.4
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A8
+      x_ft: 4.17
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A9
+      x_ft: 6.03
+      y_ft: 4.17
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A5
+      x_ft: 8.43
+      y_ft: 4.7
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A1
+      x_ft: 11.48
+      y_ft: 4.45
+      locked: false
+      required: false
+      notes: ''

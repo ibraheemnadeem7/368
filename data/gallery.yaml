@@ -1,0 +1,247 @@
+schema_version: "2.0"
+
+gallery:
+  id: "gund_second_floor"
+  name: "The Gund Second Floor"
+  subtitle: "7-room model inside 88 ft by 66 ft 8 in footprint"
+  location: "The Gund at Kenyon College"
+  notes: "Architectural model of the gallery area only, based on annotated plan and preliminary observation."
+  rooms:
+    - id: "R1"
+      name: "Entry Room"
+      width_ft: 18
+      height_ft: 66.67
+      ceiling_height_ft: 12
+      walls:
+        - id: "R1-N"
+          label: "North Wall"
+          orientation: "north"
+          length_ft: 18
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R1-S"
+          label: "South Wall"
+          orientation: "south"
+          length_ft: 18
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R1-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 66.67
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R1-E"
+          label: "East Boundary Wall"
+          orientation: "east"
+          length_ft: 66.67
+          height_ft: 12
+          displayable: false
+          default_hang_y_ft: 5.5
+    - id: "R2"
+      name: "North Room"
+      width_ft: 40
+      height_ft: 24
+      ceiling_height_ft: 12
+      walls:
+        - id: "R2-N"
+          label: "North Boundary Wall"
+          orientation: "north"
+          length_ft: 40
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R2-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 40
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R2-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R2-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+    - id: "R3"
+      name: "Northeast Interior Room"
+      width_ft: 16
+      height_ft: 18
+      ceiling_height_ft: 12
+      walls:
+        - id: "R3-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 16
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R3-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 16
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R3-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 18
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R3-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 18
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+    - id: "R4"
+      name: "Central Room"
+      width_ft: 22
+      height_ft: 24
+      ceiling_height_ft: 12
+      walls:
+        - id: "R4-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R4-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R4-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R4-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+    - id: "R5"
+      name: "Northwest Room"
+      width_ft: 22
+      height_ft: 24
+      ceiling_height_ft: 12
+      walls:
+        - id: "R5-N"
+          label: "North Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R5-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R5-W"
+          label: "West Boundary Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R5-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+    - id: "R6"
+      name: "Southwest Room"
+      width_ft: 22
+      height_ft: 20
+      ceiling_height_ft: 12
+      walls:
+        - id: "R6-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R6-S"
+          label: "South Boundary Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R6-W"
+          label: "West Boundary Wall"
+          orientation: "west"
+          length_ft: 20
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R6-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 20
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+    - id: "R7"
+      name: "South Room"
+      width_ft: 40
+      height_ft: 20
+      ceiling_height_ft: 12
+      walls:
+        - id: "R7-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 40
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R7-S"
+          label: "South Boundary Wall"
+          orientation: "south"
+          length_ft: 40
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R7-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 20
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5
+        - id: "R7-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 20
+          height_ft: 12
+          displayable: true
+          default_hang_y_ft: 5.5

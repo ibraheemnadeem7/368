@@ -1,0 +1,647 @@
+schema_version: '2.0'
+art:
+  id: vienna_art_catalog_01
+  title: Vienna Art Catalog
+  subtitle: Artwork dataset for the Gallery YAML Manager
+  curator: Applied Algorithms
+  source_museum: Mixed reference set
+  notes: Starter subset of the real art catalog using the same schema.
+  controlled_vocabularies:
+    theme_tags: [animal, nature_study, religious_study, figure_study, figure, portrait, self_portrait, landscape, cityscape, fantasy, abstract_figure, documentary, street_scene, architecture, conceptual, installation, identity, abstraction, social_commentary, photography]
+    periods: [Northern Renaissance, High Renaissance, Impressionism, Post-Impressionism, Symbolism, Expressionism, Modernism, Avant-Garde, Contemporary, Contemporary Photography]
+    media: [drawing, painting, watercolor, photography, digital_photography, archival_pigment_print, installation_art, conceptual_art, Sculpture]
+    palette_tags: [earth, brown, natural, green, blue, light, dark, gold, warm, neutral, orange, red, black_and_white, grayscale, vivid, muted, industrial, multicolor]
+    mood_tags: [observational, quiet, precise, devotional, reflective, calm, immersive, formal, intense, dramatic, expressive, playful, documentary, unsettling, conceptual, urban, meditative, critical]
+  artworks:
+    - id: A1
+      title: Hare
+      artist: Albrecht Dürer
+      year: 1502
+      period: Northern Renaissance
+      medium: watercolor
+      width_ft: 1.7
+      height_ft: 2.1
+      orientation: portrait
+      primary_theme: animal
+      theme_tags: [animal, nature_study]
+      visual_intensity: 0.4
+      focal_weight: 0.35
+      palette_tags: [earth, brown, natural]
+      mood_tags: [observational, quiet, precise]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+      notes: Can also be treated as a nature study.
+    - id: A5
+      title: The Water Lily Pond
+      artist: Claude Monet
+      year: 1917
+      period: Impressionism
+      medium: painting
+      width_ft: 2.8
+      height_ft: 1.6
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [landscape, nature_study]
+      visual_intensity: 0.55
+      focal_weight: 0.55
+      palette_tags: [green, blue, light]
+      mood_tags: [calm, immersive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+      notes: Possible horizontal anchor work.
+    - id: A8
+      title: Self-portrait in Orange Cloak
+      artist: Egon Schiele
+      year: 1913
+      period: Expressionism
+      medium: painting
+      width_ft: 1.6
+      height_ft: 2.3
+      orientation: portrait
+      primary_theme: self_portrait
+      theme_tags: [self_portrait, portrait, figure]
+      visual_intensity: 0.78
+      focal_weight: 0.72
+      palette_tags: [orange, dark, warm]
+      mood_tags: [intense, expressive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+      notes: Should score strongly in portrait-oriented walls.
+    - id: A21
+      title: Migrant Mother
+      artist: Dorothea Lange
+      year: 1936
+      period: Contemporary Photography
+      medium: photography
+      width_ft: 1.8
+      height_ft: 2.2
+      orientation: portrait
+      primary_theme: documentary
+      theme_tags: [documentary, portrait, social_commentary, identity]
+      visual_intensity: 0.74
+      focal_weight: 0.8
+      palette_tags: [black_and_white, grayscale, dark]
+      mood_tags: [documentary, intense, reflective, critical]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+      notes: Documentary photography entry with strong emotional focal power.
+    - id: A22
+      title: Moonrise, Hernandez, New Mexico
+      artist: Ansel Adams
+      year: 1941
+      period: Contemporary Photography
+      medium: photography
+      width_ft: 2.6
+      height_ft: 1.8
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [landscape, photography, nature_study]
+      visual_intensity: 0.68
+      focal_weight: 0.76
+      palette_tags: [black_and_white, grayscale, light, dark]
+      mood_tags: [meditative, dramatic, precise]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+      notes: Strong photographic landscape anchor.
+    - id: A23
+      title: 'Untitled Film Still #21'
+      artist: Cindy Sherman
+      year: 1978
+      period: Contemporary
+      medium: photography
+      width_ft: 1.9
+      height_ft: 2.3
+      orientation: portrait
+      primary_theme: identity
+      theme_tags: [identity, self_portrait, conceptual, portrait]
+      visual_intensity: 0.71
+      focal_weight: 0.79
+      palette_tags: [black_and_white, grayscale, muted]
+      mood_tags: [conceptual, unsettling, reflective, critical]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A24
+      title: 99 Cent II Diptychon
+      artist: Andreas Gursky
+      year: 2001
+      period: Contemporary Photography
+      medium: archival_pigment_print
+      width_ft: 4.5
+      height_ft: 2.4
+      orientation: landscape
+      primary_theme: street_scene
+      theme_tags: [street_scene, architecture, documentary, abstraction]
+      visual_intensity: 0.82
+      focal_weight: 0.9
+      palette_tags: [vivid, industrial, multicolor]
+      mood_tags: [urban, intense, conceptual]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A25
+      title: The Physical Impossibility of Death in the Mind of Someone Living
+      artist: Damien Hirst
+      year: 1991
+      period: Contemporary
+      medium: installation_art
+      width_ft: 5.0
+      height_ft: 2.5
+      orientation: landscape
+      primary_theme: installation
+      theme_tags: [installation, conceptual, animal, social_commentary]
+      visual_intensity: 0.88
+      focal_weight: 0.95
+      palette_tags: [industrial, blue, light]
+      mood_tags: [unsettling, conceptual, intense, critical]
+      eligible: false
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A26
+      title: Untitled
+      artist: Mark Rothko
+      year: 1969
+      period: Contemporary
+      medium: painting
+      width_ft: 3.8
+      height_ft: 4.2
+      orientation: portrait
+      primary_theme: abstraction
+      theme_tags: [abstraction, conceptual]
+      visual_intensity: 0.84
+      focal_weight: 0.88
+      palette_tags: [dark, red, brown, muted]
+      mood_tags: [meditative, intense, immersive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A27
+      title: Campbell's Soup Cans
+      artist: Andy Warhol
+      year: 1962
+      period: Contemporary
+      medium: painting
+      width_ft: 3.2
+      height_ft: 2.4
+      orientation: landscape
+      primary_theme: social_commentary
+      theme_tags: [social_commentary, conceptual, abstraction, street_scene]
+      visual_intensity: 0.69
+      focal_weight: 0.83
+      palette_tags: [red, light, industrial, vivid]
+      mood_tags: [playful, critical, urban, conceptual]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: Kenyon-Angels
+      title: Kenyon Angels in Fog
+      artist: James Skon
+      year: 2026
+      period: Contemporary Photography
+      medium: photography
+      width_ft: 4.0
+      height_ft: 3.0
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [nature_study, landscape]
+      visual_intensity: 0.5
+      focal_weight: 0.5
+      palette_tags: [grayscale]
+      mood_tags: [quiet, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: SKON2
+      title: Sunrise over Palermo Sicily
+      artist: James Skon
+      year: 2025
+      period: Contemporary Photography
+      medium: digital_photography
+      width_ft: 3.0
+      height_ft: 4.0
+      orientation: landscape
+      primary_theme: cityscape
+      theme_tags: [landscape, cityscape]
+      visual_intensity: 0.5
+      focal_weight: 0.5
+      palette_tags: [gold]
+      mood_tags: []
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A9
+      title: Sistine Madonna
+      artist: Raphael
+      year: 151
+      period: Northern Renaissance
+      medium: painting
+      width_ft: 2.15
+      height_ft: 2.65
+      orientation: portrait
+      primary_theme: religious_study
+      theme_tags: [religious_study, figure_study, figure, portrait]
+      visual_intensity: 0.65
+      focal_weight: 0.6
+      palette_tags: [warm, gold, green, dark]
+      mood_tags: [devotional, reflective, calm, formal]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: wave_painting
+      title: The Wave
+      artist: Katsushika Hokusai
+      year: 1831
+      period: Expressionism
+      medium: painting
+      width_ft: 1.24
+      height_ft: 0.84
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [landscape, nature_study]
+      visual_intensity: 0.5
+      focal_weight: 0.5
+      palette_tags: []
+      mood_tags: [quiet, dramatic, calm, meditative]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A35
+      title: Disintegration of the Persistence of Memory
+      artist: Salvador Dali
+      year: 1952
+      period: Contemporary
+      medium: painting
+      width_ft: 0.83333
+      height_ft: 1.08333
+      orientation: landscape
+      primary_theme: abstraction
+      theme_tags: [landscape, abstraction]
+      visual_intensity: 0.5
+      focal_weight: 0.5
+      palette_tags: [vivid, multicolor]
+      mood_tags: [dramatic, immersive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A105
+      title: Girl with a Pearl Earring
+      artist: Johannes Vermeer
+      year: 1665
+      period: Northern Renaissance
+      medium: painting
+      width_ft: 1.5
+      height_ft: 2.0
+      orientation: portrait
+      primary_theme: portrait
+      theme_tags: [portrait]
+      visual_intensity: 0.6
+      focal_weight: 0.9
+      palette_tags: [dark, blue]
+      mood_tags: [quiet, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A110
+      title: Starry Night
+      artist: Vincent van Gogh
+      year: 1889
+      period: Post-Impressionism
+      medium: painting
+      width_ft: 3.0
+      height_ft: 2.5
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [landscape, abstraction]
+      visual_intensity: 0.9
+      focal_weight: 0.95
+      palette_tags: [blue, vivid]
+      mood_tags: [expressive, immersive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A111
+      title: American Gothic
+      artist: Grant Wood
+      year: 1930
+      period: Modernism
+      medium: painting
+      width_ft: 2.6
+      height_ft: 3.1
+      orientation: portrait
+      primary_theme: portrait
+      theme_tags: [portrait, social_commentary]
+      visual_intensity: 0.6
+      focal_weight: 0.85
+      palette_tags: [earth, muted]
+      mood_tags: [formal, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A112
+      title: Nighthawks
+      artist: Edward Hopper
+      year: 1942
+      period: Modernism
+      medium: painting
+      width_ft: 5.0
+      height_ft: 2.5
+      orientation: landscape
+      primary_theme: cityscape
+      theme_tags: [cityscape, social_commentary]
+      visual_intensity: 0.75
+      focal_weight: 0.9
+      palette_tags: [dark, green]
+      mood_tags: [quiet, urban]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A125
+      title: The Persistence of Memory
+      artist: Salvador Dalí
+      year: 1931
+      period: Modernism
+      medium: painting
+      width_ft: 2.0
+      height_ft: 1.5
+      orientation: landscape
+      primary_theme: abstraction
+      theme_tags: [abstraction, fantasy]
+      visual_intensity: 0.7
+      focal_weight: 0.85
+      palette_tags: [earth, blue]
+      mood_tags: [unsettling]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A126
+      title: The Son of Man
+      artist: René Magritte
+      year: 1964
+      period: Modernism
+      medium: painting
+      width_ft: 3.0
+      height_ft: 3.5
+      orientation: portrait
+      primary_theme: identity
+      theme_tags: [identity, conceptual]
+      visual_intensity: 0.7
+      focal_weight: 0.85
+      palette_tags: [green, muted]
+      mood_tags: [conceptual]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A135
+      title: Impression, Sunrise
+      artist: Claude Monet
+      year: 1872
+      period: Impressionism
+      medium: painting
+      width_ft: 2.0
+      height_ft: 1.5
+      orientation: landscape
+      primary_theme: landscape
+      theme_tags: [landscape]
+      visual_intensity: 0.6
+      focal_weight: 0.75
+      palette_tags: [orange, blue]
+      mood_tags: [calm]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A141
+      title: Marilyn Diptych
+      artist: Andy Warhol
+      year: 1962
+      period: Contemporary
+      medium: painting
+      width_ft: 9.5
+      height_ft: 6.7
+      orientation: landscape
+      primary_theme: identity
+      theme_tags: [identity, conceptual, portrait]
+      visual_intensity: 0.86
+      focal_weight: 0.9
+      palette_tags: [vivid, multicolor]
+      mood_tags: [playful, critical]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A144
+      title: Woman with a Hat
+      artist: Henri Matisse
+      year: 1905
+      period: Modernism
+      medium: painting
+      width_ft: 2.6
+      height_ft: 3.3
+      orientation: portrait
+      primary_theme: portrait
+      theme_tags: [portrait, figure]
+      visual_intensity: 0.83
+      focal_weight: 0.8
+      palette_tags: [vivid, multicolor]
+      mood_tags: [expressive, playful]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A145
+      title: The Red Studio
+      artist: Henri Matisse
+      year: 1911
+      period: Modernism
+      medium: painting
+      width_ft: 6.0
+      height_ft: 5.5
+      orientation: landscape
+      primary_theme: abstraction
+      theme_tags: [abstraction, architecture]
+      visual_intensity: 0.88
+      focal_weight: 0.86
+      palette_tags: [red, warm]
+      mood_tags: [immersive, expressive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A149
+      title: The Two Fridas
+      artist: Frida Kahlo
+      year: 1939
+      period: Modernism
+      medium: painting
+      width_ft: 5.7
+      height_ft: 5.7
+      orientation: landscape
+      primary_theme: identity
+      theme_tags: [identity, portrait, figure]
+      visual_intensity: 0.82
+      focal_weight: 0.9
+      palette_tags: [warm, green, red]
+      mood_tags: [reflective, expressive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A150
+      title: The Treachery of Images
+      artist: René Magritte
+      year: 1929
+      period: Modernism
+      medium: painting
+      width_ft: 2.7
+      height_ft: 2.0
+      orientation: landscape
+      primary_theme: conceptual
+      theme_tags: [conceptual, social_commentary]
+      visual_intensity: 0.45
+      focal_weight: 0.75
+      palette_tags: [earth, neutral]
+      mood_tags: [conceptual, critical]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A151
+      title: The Lovers
+      artist: René Magritte
+      year: 1928
+      period: Modernism
+      medium: painting
+      width_ft: 2.4
+      height_ft: 1.8
+      orientation: landscape
+      primary_theme: identity
+      theme_tags: [identity, figure, conceptual]
+      visual_intensity: 0.68
+      focal_weight: 0.8
+      palette_tags: [muted, dark]
+      mood_tags: [unsettling, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A152
+      title: A Bar at the Folies-Bergère
+      artist: Édouard Manet
+      year: 1882
+      period: Modernism
+      medium: painting
+      width_ft: 4.3
+      height_ft: 3.2
+      orientation: landscape
+      primary_theme: portrait
+      theme_tags: [portrait, cityscape, social_commentary]
+      visual_intensity: 0.74
+      focal_weight: 0.84
+      palette_tags: [warm, dark, gold]
+      mood_tags: [reflective, urban]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A153
+      title: Black Iris
+      artist: Georgia O'Keeffe
+      year: 1926
+      period: Modernism
+      medium: painting
+      width_ft: 3.0
+      height_ft: 2.5
+      orientation: portrait
+      primary_theme: nature_study
+      theme_tags: [nature_study, abstraction]
+      visual_intensity: 0.78
+      focal_weight: 0.82
+      palette_tags: [dark, muted, green]
+      mood_tags: [meditative, immersive]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A154
+      title: "Cow's Skull: Red, White, and Blue"
+      artist: Georgia O'Keeffe
+      year: 1931
+      period: Modernism
+      medium: painting
+      width_ft: 3.3
+      height_ft: 3.0
+      orientation: portrait
+      primary_theme: nature_study
+      theme_tags: [nature_study, abstraction]
+      visual_intensity: 0.76
+      focal_weight: 0.84
+      palette_tags: [red, blue, light]
+      mood_tags: [dramatic, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A159
+      title: Nighthawks
+      artist: Edward Hopper
+      year: 1942
+      period: Modernism
+      medium: painting
+      width_ft: 5.0
+      height_ft: 2.5
+      orientation: landscape
+      primary_theme: cityscape
+      theme_tags: [cityscape, social_commentary]
+      visual_intensity: 0.75
+      focal_weight: 0.9
+      palette_tags: [dark, green]
+      mood_tags: [quiet, urban]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
+    - id: A160
+      title: American Gothic
+      artist: Grant Wood
+      year: 1930
+      period: Modernism
+      medium: painting
+      width_ft: 2.6
+      height_ft: 3.1
+      orientation: portrait
+      primary_theme: portrait
+      theme_tags: [portrait, social_commentary]
+      visual_intensity: 0.6
+      focal_weight: 0.85
+      palette_tags: [earth, muted]
+      mood_tags: [formal, reflective]
+      eligible: true
+      required: false
+      locked: false
+      locked_position: {x_ft: null, y_ft: null}
