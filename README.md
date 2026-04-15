@@ -37,7 +37,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python -m wall_designer.main   --gallery data/gallery.yaml   --art data/art.yaml   --scoring data/scoring_basic.yaml   --show data/show.yaml   --wall R2-N   --algorithm student_algorithms/wall_greedy_v1.py
+python3 -m wall_designer.main   --gallery data/gallery.yaml   --art data/art.yaml   --scoring data/scoring_basic.yaml   --show data/show.yaml   --wall R2-N   --algorithm student_algorithms/wall_greedy_v1.py
 ```
 
 This uses the candidate artwork ids already stored under `show.wall_designs` for the selected wall.
@@ -45,7 +45,7 @@ This uses the candidate artwork ids already stored under `show.wall_designs` for
 You can also override candidates explicitly:
 
 ```bash
-python -m wall_designer.main   --gallery data/gallery.yaml   --art data/art.yaml   --scoring data/scoring_basic.yaml   --show data/show.yaml   --wall R2-N   --candidates A1,A5,A8,A26,A9   --algorithm student_algorithms/wall_greedy_v1.py
+python3 -m wall_designer.main   --gallery data/gallery.yaml   --art data/art.yaml   --scoring data/scoring_basic.yaml   --show data/show.yaml   --wall R2-N   --candidates A1,A5,A8,A26,A9   --algorithm student_algorithms/wall_greedy_v1.py
 ```
 
 ## Recommended student workflow
