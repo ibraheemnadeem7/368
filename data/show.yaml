@@ -35,58 +35,119 @@ show:
     status: generated
     notes: ''
     score:
-      total: 0.4959
+      total: 0.9222
       failed_constraints: []
       criteria:
         spacing_regularity:
-          raw: 91.08
-          score: 0.7991
+          raw: 75.02
+          score: 0.9997
           importance: 0.9
         visual_balance:
-          raw: 0.0
-          score: 0
+          raw: 89.34
+          score: 0.8599
           importance: 0.8
         wall_utilization:
-          raw: 32.65
-          score: 0.653
+          raw: 43.95
+          score: 0.879
           importance: 0.8
         thematic_cohesion:
           raw: 50.75
           score: 0.889
           importance: 0.5
         focal_point:
-          raw: 0.0
-          score: 0
+          raw: 80.0
+          score: 1.0
           importance: 0.4
       warnings: []
     placements:
-    - artwork_id: A26
-      x_ft: 0.12
-      y_ft: 3.4
+    - artwork_id: A1
+      x_ft: 6.82
+      y_ft: 4.45
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A5
+      x_ft: 9.9
+      y_ft: 4.7
       locked: false
       required: false
       notes: ''
     - artwork_id: A8
-      x_ft: 4.17
+      x_ft: 14.08
       y_ft: 4.35
       locked: false
       required: false
       notes: ''
     - artwork_id: A9
-      x_ft: 6.03
+      x_ft: 17.07
       y_ft: 4.17
       locked: false
       required: false
       notes: ''
-    - artwork_id: A5
-      x_ft: 8.43
-      y_ft: 4.7
+    - artwork_id: A26
+      x_ft: 20.6
+      y_ft: 3.4
       locked: false
       required: false
       notes: ''
-    - artwork_id: A1
-      x_ft: 11.48
-      y_ft: 4.45
+  - id: ARR_R7S_001
+    title: R7-S Generated Arrangement
+    space_id: R7-S
+    status: generated
+    notes: ''
+    score:
+      total: 0.8201
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 75.02
+          score: 0.9997
+          importance: 0.9
+        visual_balance:
+          raw: 27.63
+          score: 0.3525
+          importance: 0.8
+        wall_utilization:
+          raw: 47.08
+          score: 0.9415
+          importance: 0.8
+        thematic_cohesion:
+          raw: 67.75
+          score: 0.907
+          importance: 0.5
+        focal_point:
+          raw: 80.0
+          score: 1.0
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: Kenyon-Angels
+      x_ft: 4.57
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: SKON2
+      x_ft: 9.95
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A22
+      x_ft: 14.33
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A23
+      x_ft: 18.32
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A21
+      x_ft: 21.6
+      y_ft: 4.4
       locked: false
       required: false
       notes: ''
