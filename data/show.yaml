@@ -96,58 +96,58 @@ show:
     status: generated
     notes: ''
     score:
-      total: 0.5134
+      total: 0.8201
       failed_constraints: []
       criteria:
         spacing_regularity:
-          raw: 91.0
-          score: 0.8
+          raw: 75.02
+          score: 0.9997
           importance: 0.9
         visual_balance:
-          raw: 0.0
-          score: 0
+          raw: 27.63
+          score: 0.3525
           importance: 0.8
         wall_utilization:
-          raw: 35.75
-          score: 0.715
+          raw: 47.08
+          score: 0.9415
           importance: 0.8
         thematic_cohesion:
           raw: 67.75
           score: 0.907
           importance: 0.5
         focal_point:
-          raw: 0.0
-          score: 0
+          raw: 80.0
+          score: 1.0
           importance: 0.4
       warnings: []
     placements:
-    - artwork_id: A21
-      x_ft: 0.12
-      y_ft: 4.4
-      locked: false
-      required: false
-      notes: ''
-    - artwork_id: A23
-      x_ft: 2.17
-      y_ft: 4.35
-      locked: false
-      required: false
-      notes: ''
-    - artwork_id: A22
-      x_ft: 4.32
-      y_ft: 4.6
-      locked: false
-      required: false
-      notes: ''
     - artwork_id: Kenyon-Angels
-      x_ft: 7.17
+      x_ft: 4.57
       y_ft: 4.0
       locked: false
       required: false
       notes: ''
     - artwork_id: SKON2
-      x_ft: 11.42
+      x_ft: 9.95
       y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A22
+      x_ft: 14.33
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A23
+      x_ft: 18.32
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A21
+      x_ft: 21.6
+      y_ft: 4.4
       locked: false
       required: false
       notes: ''
