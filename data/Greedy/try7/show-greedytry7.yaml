@@ -84,7 +84,32 @@ show:
   - wall_id: R2-S
     candidate_artwork_ids: []
   - wall_id: R2-W
-    candidate_artwork_ids: []
+    candidate_artwork_ids:
+    - A5
+    - A8
+    - A24
+    - A23
+    - SKON2
+    - Kenyon-Angels
+    - A30
+    - colorado_springs_sunset
+    - '19023'
+    - A35
+    - A9
+    - wave_painting
+    - A100
+    - A103
+    - A102
+    - A126
+    - A127
+    - A130
+    - A154
+    - A158
+    - A153
+    - MET5
+    - A511
+    - A109
+    - A22
   - wall_id: R2-E
     candidate_artwork_ids: []
   - wall_id: R3-N
@@ -170,8 +195,8 @@ show:
       failed_constraints: []
       criteria:
         spacing_regularity:
-          raw: 75.0
-          score: 1.0
+          raw: 75
+          score: 1
           importance: 0.9
         visual_balance:
           raw: 58.67
@@ -182,12 +207,12 @@ show:
           score: 0.8162
           importance: 0.8
         thematic_cohesion:
-          raw: 56.0
+          raw: 56
           score: 0.952
           importance: 0.5
         focal_point:
-          raw: 80.0
-          score: 1.0
+          raw: 80
+          score: 1
           importance: 0.4
       warnings: []
     placements:
@@ -211,7 +236,7 @@ show:
       notes: ''
     - artwork_id: A510
       x_ft: 10.35
-      y_ft: 4.0
+      y_ft: 4
       locked: false
       required: false
       notes: ''
@@ -228,8 +253,75 @@ show:
       required: false
       notes: ''
     - artwork_id: A110
-      x_ft: 21.0
+      x_ft: 21
       y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+  - id: ARR_R2W_001
+    title: R2-W Generated Arrangement
+    space_id: R2-W
+    status: generated
+    notes: ''
+    score:
+      total: 0.9263
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 74.98
+          score: 0.9997
+          importance: 0.9
+        visual_balance:
+          raw: 79.34
+          score: 0.99
+          importance: 0.8
+        wall_utilization:
+          raw: 89.0
+          score: 0.715
+          importance: 0.8
+        thematic_cohesion:
+          raw: 61.6
+          score: 0.9808
+          importance: 0.5
+        focal_point:
+          raw: 59.6
+          score: 0.988
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A158
+      x_ft: 1.32
+      y_ft: 5.08
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A23
+      x_ft: 3.95
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A100
+      x_ft: 7.23
+      y_ft: 3.75
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A8
+      x_ft: 11.11
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: MET5
+      x_ft: 14.09
+      y_ft: 3.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A109
+      x_ft: 21.48
+      y_ft: 5.1
       locked: false
       required: false
       notes: ''
