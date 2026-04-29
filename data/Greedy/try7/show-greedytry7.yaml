@@ -264,64 +264,64 @@ show:
     status: generated
     notes: ''
     score:
-      total: 0.9263
+      total: 0.9655
       failed_constraints: []
       criteria:
         spacing_regularity:
-          raw: 74.98
-          score: 0.9997
+          raw: 75.04
+          score: 0.9995
           importance: 0.9
         visual_balance:
-          raw: 79.34
-          score: 0.99
+          raw: 78.01
+          score: 0.9702
           importance: 0.8
         wall_utilization:
-          raw: 89.0
-          score: 0.715
+          raw: 91.92
+          score: 0.9617
           importance: 0.8
         thematic_cohesion:
-          raw: 61.6
-          score: 0.9808
+          raw: 61.0
+          score: 0.988
           importance: 0.5
         focal_point:
-          raw: 59.6
-          score: 0.988
+          raw: 70.6
+          score: 0.859
           importance: 0.4
       warnings: []
     placements:
-    - artwork_id: A158
-      x_ft: 1.32
-      y_ft: 5.08
+    - artwork_id: A127
+      x_ft: 0.97
+      y_ft: 3.0
       locked: false
       required: false
       notes: ''
-    - artwork_id: A23
-      x_ft: 3.95
-      y_ft: 4.35
-      locked: false
-      required: false
-      notes: ''
-    - artwork_id: A100
-      x_ft: 7.23
+    - artwork_id: A126
+      x_ft: 6.35
       y_ft: 3.75
       locked: false
       required: false
       notes: ''
     - artwork_id: A8
-      x_ft: 11.11
+      x_ft: 10.73
       y_ft: 4.35
       locked: false
       required: false
       notes: ''
-    - artwork_id: MET5
-      x_ft: 14.09
-      y_ft: 3.25
+    - artwork_id: A100
+      x_ft: 13.72
+      y_ft: 3.75
       locked: false
       required: false
       notes: ''
-    - artwork_id: A109
-      x_ft: 21.48
-      y_ft: 5.1
+    - artwork_id: A23
+      x_ft: 17.6
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A9
+      x_ft: 20.88
+      y_ft: 4.17
       locked: false
       required: false
       notes: ''
