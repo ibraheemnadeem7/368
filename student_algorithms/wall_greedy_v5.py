@@ -80,6 +80,63 @@ def _theme_sim(a, b, pairwise_tables, default=0.1):
     return best
 
 
+def _tag_jaccard(a_tags, b_tags):
+    a_set = {x for x in a_tags if x}
+    b_set = {x for x in b_tags if x}
+    if not a_set or not b_set:
+        return 0.0
+    return len(a_set & b_set) / len(a_set | b_set)
+
+
+def _palette_sim(a, b):
+    return _tag_jaccard(a.get('palette_tags', []), b.get('palette_tags', []))
+
+
+def _mood_sim(a, b):
+    return _tag_jaccard(a.get('mood_tags', []), b.get('mood_tags', []))
+
+
+def _width_balance_score(artworks):
+    widths = sorted(_f(a.get('width_ft')) for a in artworks if _f(a.get('width_ft')) > 0)
+    if len(widths) < 2:
+        return 0.0
+
+    avg_width = sum(widths) / len(widths)
+    max_width = widths[-1]
+    min_width = widths[0]
+    dominance = 0.0 if avg_width <= 0 else max(0.0, (max_width / avg_width) - 1.0)
+    spread = 0.0 if max_width <= 0 else (max_width - min_width) / max_width
+    score = 1.0 - min(1.0, 0.45 * dominance + 0.55 * spread)
+    return max(0.0, score)
+
+
+def _cluster_cohesion(artworks, pairwise_tables):
+    if len(artworks) < 2:
+        return 0.0
+
+    theme_vals = []
+    palette_vals = []
+    mood_vals = []
+    for i in range(len(artworks)):
+        for j in range(i + 1, len(artworks)):
+            a = artworks[i]
+            b = artworks[j]
+            theme_vals.append(_theme_sim(a, b, pairwise_tables))
+            palette_vals.append(_palette_sim(a, b))
+            mood_vals.append(_mood_sim(a, b))
+
+    theme_avg = sum(theme_vals) / len(theme_vals)
+    palette_avg = sum(palette_vals) / len(palette_vals)
+    mood_avg = sum(mood_vals) / len(mood_vals)
+    width_score = _width_balance_score(artworks)
+    return (
+        0.45 * theme_avg +
+        0.30 * palette_avg +
+        0.10 * mood_avg +
+        0.15 * width_score
+    )
+
+
 def _greedy_theme_order(artworks, pairwise_tables):
     if len(artworks) <= 1:
         return list(artworks)
@@ -152,8 +209,17 @@ def _score_for_subset(art, anchor, pairwise_tables, wall_width):
     focal = _f(art.get('focal_weight'))
     intensity = _f(art.get('visual_intensity'))
     theme = 0.0 if anchor is None else _theme_sim(art, anchor, pairwise_tables)
+    palette = 0.0 if anchor is None else _palette_sim(art, anchor)
+    mood = 0.0 if anchor is None else _mood_sim(art, anchor)
     width_bonus = 0.0 if wall_width <= 0 else max(0.0, 1.0 - (width / wall_width))
-    return (0.45 * theme) + (0.25 * focal) + (0.20 * intensity) + (0.10 * width_bonus)
+    return (
+        (0.32 * theme) +
+        (0.18 * palette) +
+        (0.08 * mood) +
+        (0.18 * focal) +
+        (0.14 * intensity) +
+        (0.10 * width_bonus)
+    )
 
 
 def _subset_by_rank(anchor, others, rank_fn, wall, scoring_data, limit):
@@ -188,9 +254,6 @@ def _candidate_subsets(feasible, wall, scoring_data, pairwise_tables):
         return []
 
     wall_w = _f(wall.get('width_ft'))
-    anchor = max(feasible, key=lambda a: (_f(a.get('focal_weight')), -_f(a.get('width_ft'))))
-    others = [a for a in feasible if a['id'] != anchor['id']]
-
     subsets = []
     seen = set()
 
@@ -200,38 +263,45 @@ def _candidate_subsets(feasible, wall, scoring_data, pairwise_tables):
             seen.add(ids)
             subsets.append(list(items))
 
-    add_subset(_subset_by_rank(
-        anchor,
-        others,
-        rank_fn=lambda a: _score_for_subset(a, anchor, pairwise_tables, wall_w),
-        wall=wall,
-        scoring_data=scoring_data,
-        limit=limit,
-    ))
-    add_subset(_subset_by_rank(
-        anchor,
-        others,
-        rank_fn=lambda a: _f(a.get('visual_intensity')),
-        wall=wall,
-        scoring_data=scoring_data,
-        limit=limit,
-    ))
-    add_subset(_subset_by_rank(
-        anchor,
-        others,
-        rank_fn=lambda a: _f(a.get('focal_weight')),
-        wall=wall,
-        scoring_data=scoring_data,
-        limit=limit,
-    ))
-    add_subset(_subset_by_rank(
-        anchor,
-        others,
-        rank_fn=lambda a: -_f(a.get('width_ft')),
-        wall=wall,
-        scoring_data=scoring_data,
-        limit=limit,
-    ))
+    anchor_candidates = sorted(
+        feasible,
+        key=lambda a: (
+            _f(a.get('focal_weight')) +
+            0.35 * _f(a.get('visual_intensity')) -
+            0.20 * (_f(a.get('width_ft')) / max(wall_w, 1.0))
+        ),
+        reverse=True,
+    )[:3]
+
+    for anchor in anchor_candidates:
+        others = [a for a in feasible if a['id'] != anchor['id']]
+        add_subset(_subset_by_rank(
+            anchor,
+            others,
+            rank_fn=lambda a, anchor=anchor: _score_for_subset(a, anchor, pairwise_tables, wall_w),
+            wall=wall,
+            scoring_data=scoring_data,
+            limit=limit,
+        ))
+        add_subset(_subset_by_rank(
+            anchor,
+            others,
+            rank_fn=lambda a, anchor=anchor: (
+                0.65 * _score_for_subset(a, anchor, pairwise_tables, wall_w) +
+                0.35 * (1.0 - min(1.0, _f(a.get('width_ft')) / max(wall_w, 1.0)))
+            ),
+            wall=wall,
+            scoring_data=scoring_data,
+            limit=limit,
+        ))
+        add_subset(_subset_by_rank(
+            anchor,
+            others,
+            rank_fn=lambda a: _f(a.get('visual_intensity')),
+            wall=wall,
+            scoring_data=scoring_data,
+            limit=limit,
+        ))
 
     full_theme = _greedy_theme_order(feasible, pairwise_tables)
     theme_subset = []
@@ -248,6 +318,39 @@ def _candidate_subsets(feasible, wall, scoring_data, pairwise_tables):
     add_subset(theme_subset)
 
     return subsets
+
+
+def _curatorial_bonus(ordering, wall, pairwise_tables):
+    if len(ordering) < 2:
+        return 0.0
+
+    theme_chain = []
+    palette_chain = []
+    mood_chain = []
+    for i in range(len(ordering) - 1):
+        a = ordering[i]
+        b = ordering[i + 1]
+        theme_chain.append(_theme_sim(a, b, pairwise_tables))
+        palette_chain.append(_palette_sim(a, b))
+        mood_chain.append(_mood_sim(a, b))
+
+    cluster = _cluster_cohesion(ordering, pairwise_tables)
+    width_balance = _width_balance_score(ordering)
+    avg_theme = sum(theme_chain) / len(theme_chain)
+    avg_palette = sum(palette_chain) / len(palette_chain)
+    avg_mood = sum(mood_chain) / len(mood_chain)
+    wall_w = max(_f(wall.get('width_ft')), 1.0)
+    max_ratio = max(_f(a.get('width_ft')) / wall_w for a in ordering)
+    dominance_penalty = max(0.0, max_ratio - 0.42)
+
+    return (
+        0.40 * cluster +
+        0.22 * avg_theme +
+        0.18 * avg_palette +
+        0.08 * avg_mood +
+        0.12 * width_balance -
+        0.25 * dominance_penalty
+    )
 
 
 def _place_uniform(wall, ordering, gap, scoring_data):
@@ -379,6 +482,7 @@ def generate(wall, artworks, scoring_data):
     gap = _optimal_gap(scoring_data)
 
     best_score = -1.0
+    best_total_value = -1.0
     best_placements = []
     best_ordering = []
     best_subset = []
@@ -412,7 +516,9 @@ def generate(wall, artworks, scoring_data):
             result = evaluate(wall, placements, subset, scoring_data)
             if result['failed_constraints']:
                 continue
-            if result['total'] > best_score:
+            total_value = result['total'] + (0.18 * _curatorial_bonus(ordering, wall, pairwise))
+            if total_value > best_total_value:
+                best_total_value = total_value
                 best_score = result['total']
                 best_placements = placements
                 best_ordering = ordering
@@ -427,7 +533,8 @@ def generate(wall, artworks, scoring_data):
     improved_placements = _place_uniform(wall, improved_order, gap, scoring_data)
     if improved_placements:
         result = evaluate(wall, improved_placements, best_subset, scoring_data)
-        if not result['failed_constraints'] and result['total'] > improved_score:
+        improved_total_value = result['total'] + (0.18 * _curatorial_bonus(improved_order, wall, pairwise))
+        if not result['failed_constraints'] and improved_total_value > best_total_value:
             best_placements = improved_placements
 
     return best_placements
