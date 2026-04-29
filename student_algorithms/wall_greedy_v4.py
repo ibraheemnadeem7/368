@@ -134,6 +134,34 @@ def _greedy_theme_order(artworks, pairwise_tables):
     return chain
 
 
+def _greedy_theme_order_anchored(others, anchor, pairwise_tables):
+    """
+    Build a chain whose *last* element is the artwork most thematically
+    similar to the anchor, then extend backward by nearest neighbour.
+
+    Used by _place_anchor_right so the artwork directly left of the focal
+    anchor on the wall always shares its theme — fixes the most visually
+    obvious adjacency mismatch.
+    """
+    if not others:
+        return []
+    if len(others) == 1:
+        return list(others)
+
+    remaining = list(others)
+    end = max(remaining, key=lambda a: _theme_sim(a, anchor, pairwise_tables))
+    chain = [end]
+    remaining.remove(end)
+
+    while remaining:
+        first = chain[0]
+        nxt = max(remaining, key=lambda a: _theme_sim(a, first, pairwise_tables))
+        chain.insert(0, nxt)
+        remaining.remove(nxt)
+
+    return chain
+
+
 # ---------------------------------------------------------------------------
 # placement builders
 # ---------------------------------------------------------------------------
@@ -310,7 +338,9 @@ def generate(wall, artworks, scoring_data):
     # ------------------------------------------------------------------
 
     # 1. Theme-greedy others → anchor on right  (primary strategy)
-    theme_others = _greedy_theme_order(others, pairwise)
+    #    Chain ends at the artwork most similar to the anchor so the
+    #    artwork directly left of the focal piece shares its theme.
+    theme_others = _greedy_theme_order_anchored(others, anchor, pairwise)
     s1 = _place_anchor_right(wall, theme_others, anchor, gap, scoring_data)
 
     # 2. Intensity-sorted others → anchor on right
