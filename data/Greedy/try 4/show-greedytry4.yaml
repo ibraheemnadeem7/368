@@ -1,0 +1,136 @@
+show:
+  id: show-greedytry4
+  title: greedytry4 Show
+  subtitle: ''
+  gallery_id: gallery-greedytry4.yaml
+  scoring_profile_id: scoring-greedytry4.yaml
+  curator: ''
+  notes: ''
+  wall_designs:
+  - wall_id: R1-N
+    candidate_artwork_ids:
+    - A101
+    - A100
+    - A102
+    - A138
+    - A121
+    - A103
+    - A139
+    - A155
+    - A156
+    - A157
+    - colorado_springs_sunset
+    - SKON2
+    - Kenyon-Angels
+    - A21
+    - A22
+  - wall_id: R1-S
+    candidate_artwork_ids: []
+  - wall_id: R1-W
+    candidate_artwork_ids: []
+  - wall_id: R1-E
+    candidate_artwork_ids: []
+  - wall_id: R2-N
+    candidate_artwork_ids: []
+  - wall_id: R2-S
+    candidate_artwork_ids: []
+  - wall_id: R2-W
+    candidate_artwork_ids: []
+  - wall_id: R2-E
+    candidate_artwork_ids: []
+  - wall_id: R3-N
+    candidate_artwork_ids: []
+  - wall_id: R3-S
+    candidate_artwork_ids: []
+  - wall_id: R3-W
+    candidate_artwork_ids: []
+  - wall_id: R3-E
+    candidate_artwork_ids: []
+  - wall_id: R4-N
+    candidate_artwork_ids: []
+  - wall_id: R4-S
+    candidate_artwork_ids: []
+  - wall_id: R4-W
+    candidate_artwork_ids: []
+  - wall_id: R4-E
+    candidate_artwork_ids: []
+  - wall_id: R5-N
+    candidate_artwork_ids: []
+  - wall_id: R5-S
+    candidate_artwork_ids: []
+  - wall_id: R5-W
+    candidate_artwork_ids: []
+  - wall_id: R5-E
+    candidate_artwork_ids: []
+  - wall_id: R6-N
+    candidate_artwork_ids: []
+  - wall_id: R6-S
+    candidate_artwork_ids: []
+  - wall_id: R6-W
+    candidate_artwork_ids: []
+  - wall_id: R6-E
+    candidate_artwork_ids: []
+  - wall_id: R7-N
+    candidate_artwork_ids: []
+  - wall_id: R7-S
+    candidate_artwork_ids: []
+  - wall_id: R7-W
+    candidate_artwork_ids: []
+  - wall_id: R7-E
+    candidate_artwork_ids: []
+  arrangements:
+  - id: ARR_R1N_001
+    title: R1-N Generated Arrangement
+    space_id: R1-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9538
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 75.0
+          score: 1.0
+          importance: 0.9
+        visual_balance:
+          raw: 72.34
+          score: 0.8852
+          importance: 0.8
+        wall_utilization:
+          raw: 91.94
+          score: 0.9611
+          importance: 0.8
+        thematic_cohesion:
+          raw: 32.67
+          score: 0.9533
+          importance: 0.5
+        focal_point:
+          raw: 78.2
+          score: 0.973
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: SKON2
+      x_ft: 0.72
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A22
+      x_ft: 5.11
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A139
+      x_ft: 9.09
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A157
+      x_ft: 15.47
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''

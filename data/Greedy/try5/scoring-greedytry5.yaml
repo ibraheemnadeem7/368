@@ -1,0 +1,174 @@
+schema_version: "2.0"
+
+scoring:
+  profile_id: vienna_wall_basic_v1
+  name: Basic Wall Profile
+  description: Simple default profile for single-wall design and student algorithms.
+
+  normalization:
+    raw_metric_scale: 0_to_100
+    final_score_scale: 0_to_1
+
+  hard_constraints:
+    min_artworks:
+      enabled: true
+      value: 2
+      penalty_mode: reject
+      penalty_value: 1
+
+    max_artworks:
+      enabled: true
+      value: 8
+      penalty_mode: reject
+      penalty_value: 1
+
+    no_overlap:
+      enabled: true
+      penalty_mode: reject
+      penalty_value: 1
+
+    stay_within_wall:
+      enabled: true
+      penalty_mode: reject
+      penalty_value: 1
+
+    min_gap_ft:
+      enabled: true
+      value: 0.25
+      penalty_mode: reject
+      penalty_value: 1
+
+    max_gap_ft:
+      enabled: true
+      value: 1.5
+      penalty_mode: reject
+      penalty_value: 1
+
+    respect_locked_positions:
+      enabled: true
+      penalty_mode: reject
+      penalty_value: 1
+
+    require_eligible:
+      enabled: true
+      penalty_mode: reject
+      penalty_value: 1
+
+  criteria:
+    spacing_regularity:
+      label: Spacing Regularity
+      evaluates: arrangement
+      metric_type: target
+      raw_value_range: [0, 100]
+      preferred_value: 75
+      tolerance: 20
+      importance: 0.9
+      scoring_curve:
+        in_tolerance_floor: 0.75
+        out_of_tolerance_decay: 0.02
+        min_score: 0
+      algorithm:
+        method: gap_variance_vs_ideal
+        params:
+          ideal_gap_ft: 0.55
+          min_gap_ft: 0.25
+          max_gap_ft: 1.5
+          out_of_range_gap_penalty: 25
+
+    visual_balance:
+      label: Visual Balance
+      evaluates: arrangement
+      metric_type: target
+      raw_value_range: [0, 100]
+      preferred_value: 80
+      tolerance: 20
+      importance: 0.8
+      scoring_curve:
+        in_tolerance_floor: 0.7
+        out_of_tolerance_decay: 0.02
+        min_score: 0
+      algorithm:
+        method: left_right_visual_mass_balance
+        params:
+          mass_formula: area_times_intensity
+          intensity_floor: 0.5
+
+    wall_utilization:
+      label: Wall Utilization
+      evaluates: arrangement
+      metric_type: target
+      raw_value_range: [0, 100]
+      preferred_value: 70
+      tolerance: 20
+      importance: 0.8
+      scoring_curve:
+        in_tolerance_floor: 0.7
+        out_of_tolerance_decay: 0.02
+        min_score: 0
+      algorithm:
+        method: occupied_width_ratio
+        params:
+          count_internal_gaps: true
+          count_outer_margins: false
+
+    thematic_cohesion:
+      label: Thematic Cohesion
+      evaluates: arrangement
+      metric_type: target
+      raw_value_range: [0, 100]
+      preferred_value: 60
+      tolerance: 25
+      importance: 0.5
+      scoring_curve:
+        in_tolerance_floor: 0.7
+        out_of_tolerance_decay: 0.02
+        min_score: 0
+      algorithm:
+        method: adjacent_theme_similarity_average
+        params:
+          default_similarity: 0.1
+          use_primary_theme_first: true
+          allow_theme_tag_fallback: true
+
+    focal_point:
+      label: Focal Point Placement
+      evaluates: arrangement
+      metric_type: target
+      raw_value_range: [0, 100]
+      preferred_value: 80
+      tolerance: 20
+      importance: 0.4
+      scoring_curve:
+        in_tolerance_floor: 0.7
+        out_of_tolerance_decay: 0.03
+        min_score: 0
+      algorithm:
+        method: featured_work_near_preferred_zone
+        params:
+          featured_selection: highest_focal_weight
+          preferred_zone: center
+          center_zone_half_width_ft: 1.5
+
+  pairwise_tables:
+    theme_similarity:
+      default_similarity: 0.1
+      pairs:
+        portrait|self_portrait: 0.95
+        portrait|figure: 0.8
+        landscape|cityscape: 0.7
+        landscape|nature_study: 0.78
+        fantasy|abstract_figure: 0.5
+        portrait|landscape: 0.2
+
+  aggregation:
+    method: weighted_average
+    use_only_nonfailed_criteria: false
+    include_bonus_terms: false
+    include_penalty_terms: true
+
+  adaptive_feedback:
+    enabled: false
+    allow_weight_updates: false
+    allow_threshold_updates: false
+    learning_rate: 0.0
+    max_weight_change_per_round: 0.0

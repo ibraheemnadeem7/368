@@ -1,0 +1,230 @@
+show:
+  id: show-greedytry5
+  title: greedytry5 Show
+  subtitle: ''
+  gallery_id: gallery-greedytry5.yaml
+  scoring_profile_id: scoring-greedytry5.yaml
+  curator: ''
+  notes: ''
+  wall_designs:
+  - wall_id: R1-N
+    candidate_artwork_ids:
+    - A130
+    - A131
+    - A132
+    - A133
+    - A134
+    - A135
+    - A136
+    - A137
+    - A138
+    - A141
+    - A140
+    - A139
+    - A25
+    - A9
+    - A101
+    - A102
+    - A8
+    - A30
+    - '19023'
+    - wave_painting
+  - wall_id: R1-S
+    candidate_artwork_ids: []
+  - wall_id: R1-W
+    candidate_artwork_ids: []
+  - wall_id: R1-E
+    candidate_artwork_ids: []
+  - wall_id: R2-N
+    candidate_artwork_ids: []
+  - wall_id: R2-S
+    candidate_artwork_ids: []
+  - wall_id: R2-W
+    candidate_artwork_ids: []
+  - wall_id: R2-E
+    candidate_artwork_ids: []
+  - wall_id: R3-N
+    candidate_artwork_ids: []
+  - wall_id: R3-S
+    candidate_artwork_ids: []
+  - wall_id: R3-W
+    candidate_artwork_ids: []
+  - wall_id: R3-E
+    candidate_artwork_ids: []
+  - wall_id: R4-N
+    candidate_artwork_ids: []
+  - wall_id: R4-S
+    candidate_artwork_ids: []
+  - wall_id: R4-W
+    candidate_artwork_ids: []
+  - wall_id: R4-E
+    candidate_artwork_ids: []
+  - wall_id: R5-N
+    candidate_artwork_ids: []
+  - wall_id: R5-S
+    candidate_artwork_ids: []
+  - wall_id: R5-W
+    candidate_artwork_ids: []
+  - wall_id: R5-E
+    candidate_artwork_ids: []
+  - wall_id: R6-N
+    candidate_artwork_ids: []
+  - wall_id: R6-S
+    candidate_artwork_ids: []
+  - wall_id: R6-W
+    candidate_artwork_ids: []
+  - wall_id: R6-E
+    candidate_artwork_ids: []
+  - wall_id: R7-N
+    candidate_artwork_ids: []
+  - wall_id: R7-S
+    candidate_artwork_ids: []
+  - wall_id: R7-W
+    candidate_artwork_ids: []
+  - wall_id: R7-E
+    candidate_artwork_ids: []
+  arrangements:
+  - id: ARR_R1N_001
+    title: R1-N Generated Arrangement
+    space_id: R1-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.0
+      failed_constraints:
+      - max_artworks
+      - max_gap_ft
+      - min_gap_ft
+      - no_overlap
+      - stay_within_wall
+      criteria:
+        spacing_regularity:
+          raw: 0.0
+          score: 0
+          importance: 0.9
+        visual_balance:
+          raw: 0.0
+          score: 0
+          importance: 0.8
+        wall_utilization:
+          raw: 100.0
+          score: 0.8
+          importance: 0.8
+        thematic_cohesion:
+          raw: 48.94
+          score: 0.8673
+          importance: 0.5
+        focal_point:
+          raw: 100.0
+          score: 0.7
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A102
+      x_ft: 1.38
+      y_ft: 1.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A101
+      x_ft: 20.77
+      y_ft: -2.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A139
+      x_ft: 51.15
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A138
+      x_ft: 57.53
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A135
+      x_ft: 64.92
+      y_ft: 4.75
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A132
+      x_ft: 68.3
+      y_ft: 1.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A137
+      x_ft: 80.68
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A9
+      x_ft: 86.07
+      y_ft: 4.17
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A136
+      x_ft: 89.6
+      y_ft: 3.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A141
+      x_ft: 98.98
+      y_ft: 2.15
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A8
+      x_ft: 109.87
+      y_ft: 4.35
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A131
+      x_ft: 112.85
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A134
+      x_ft: 116.73
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: wave_painting
+      x_ft: 124.12
+      y_ft: 5.08
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A133
+      x_ft: 126.74
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: '19023'
+      x_ft: 131.12
+      y_ft: -0.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A30
+      x_ft: 150.51
+      y_ft: -494.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A130
+      x_ft: 4.88
+      y_ft: 2.0
+      locked: false
+      required: false
+      notes: ''
