@@ -5,6 +5,18 @@ Targets medium walls such as R2-W where the previous versions could select:
 - duplicate or near-duplicate works
 - too many tiny accent pieces
 - visually scattered mixtures around one larger anchor
+
+Changes from v4:
+- keeps the v5-era safety improvements that filter out physically impossible works
+  instead of letting oversized or invalid pieces contaminate the candidate set
+- adds palette and mood similarity on top of the original theme-based ordering so
+  curatorial cohesion is not driven by theme tags alone
+- rejects duplicate-title combinations, which v4 could still treat as valid if
+  they scored well numerically
+- adds medium-wall scale gates so a 24 ft wall does not get filled with tiny
+  accent works around one larger picture
+- ranks candidate subsets before placement, rather than only scoring whichever
+  ordering happens to fit after the original greedy pass
 """
 
 from wall_designer.placer import place_left_to_right
