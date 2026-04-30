@@ -27,7 +27,26 @@ show:
   - wall_id: R1-E
     candidate_artwork_ids: []
   - wall_id: R2-N
-    candidate_artwork_ids: []
+    candidate_artwork_ids:
+    - A22
+    - A30
+    - '19023'
+    - A118
+    - wave_painting
+    - A109
+    - A128
+    - A129
+    - A133
+    - A158
+    - A155
+    - A134
+    - A508
+    - A511
+    - A513
+    - MET6
+    - MET5
+    - A514
+    - MET7
   - wall_id: R2-S
     candidate_artwork_ids: []
   - wall_id: R2-W
@@ -126,7 +145,7 @@ show:
       notes: ''
     - artwork_id: Kenyon-Angels
       x_ft: 4.71
-      y_ft: 4.0
+      y_ft: 4
       locked: false
       required: false
       notes: ''
@@ -200,6 +219,79 @@ show:
     - artwork_id: A35
       x_ft: 14.4
       y_ft: 4.96
+      locked: false
+      required: false
+      notes: ''
+  - id: ARR_R2N_001
+    title: R2-N Generated Arrangement
+    space_id: R2-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9783
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 95.15
+          score: 0.997
+          importance: 0.9
+        visual_balance:
+          raw: 59.98
+          score: 0.9996
+          importance: 0.8
+        wall_utilization:
+          raw: 91.93
+          score: 0.9615
+          importance: 0.8
+        thematic_cohesion:
+          raw: 32.67
+          score: 0.9533
+          importance: 0.5
+        focal_point:
+          raw: 82.8
+          score: 0.958
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A134
+      x_ft: 14.14
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A155
+      x_ft: 10.83
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A118
+      x_ft: 0.12
+      y_ft: 2.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: MET6
+      x_ft: 20.86
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: MET7
+      x_ft: 24.57
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A513
+      x_ft: 28.28
+      y_ft: 3.9
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A129
+      x_ft: 32.89
+      y_ft: 4.25
       locked: false
       required: false
       notes: ''
