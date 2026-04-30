@@ -1,0 +1,258 @@
+show:
+  id: show-hc3
+  title: hc3 Show
+  subtitle: ''
+  gallery_id: gallery-hc3.yaml
+  scoring_profile_id: scoring-hc3.yaml
+  curator: ''
+  notes: ''
+  wall_designs:
+  - wall_id: R1-N
+    candidate_artwork_ids:
+    - A109
+    - A110
+    - A111
+    - A114
+    - A113
+    - A112
+    - A115
+    - A116
+    - A117
+    - A120
+    - A119
+    - A118
+    - A121
+    - A122
+    - A123
+    - A124
+    - A125
+    - A126
+    - A153
+    - A152
+    - A151
+    - A154
+    - A155
+    - A156
+    - A157
+    - A158
+    - A159
+    - A160
+    - A501
+    - A500
+  - wall_id: R1-S
+    candidate_artwork_ids: []
+  - wall_id: R1-W
+    candidate_artwork_ids: []
+  - wall_id: R1-E
+    candidate_artwork_ids: []
+  - wall_id: R2-N
+    candidate_artwork_ids:
+    - A154
+    - A155
+    - A156
+    - A501
+    - A159
+    - A158
+    - A157
+    - A500
+    - A160
+    - A508
+    - A509
+    - A510
+    - A513
+    - A512
+    - A511
+    - A514
+    - A515
+    - A516
+    - MET10
+    - MET7
+    - MET8
+    - MET9
+  - wall_id: R2-S
+    candidate_artwork_ids: []
+  - wall_id: R2-W
+    candidate_artwork_ids: []
+  - wall_id: R2-E
+    candidate_artwork_ids: []
+  - wall_id: R3-N
+    candidate_artwork_ids: []
+  - wall_id: R3-S
+    candidate_artwork_ids: []
+  - wall_id: R3-W
+    candidate_artwork_ids: []
+  - wall_id: R3-E
+    candidate_artwork_ids: []
+  - wall_id: R4-N
+    candidate_artwork_ids: []
+  - wall_id: R4-S
+    candidate_artwork_ids: []
+  - wall_id: R4-W
+    candidate_artwork_ids: []
+  - wall_id: R4-E
+    candidate_artwork_ids: []
+  - wall_id: R5-N
+    candidate_artwork_ids: []
+  - wall_id: R5-S
+    candidate_artwork_ids: []
+  - wall_id: R5-W
+    candidate_artwork_ids: []
+  - wall_id: R5-E
+    candidate_artwork_ids: []
+  - wall_id: R6-N
+    candidate_artwork_ids: []
+  - wall_id: R6-S
+    candidate_artwork_ids: []
+  - wall_id: R6-W
+    candidate_artwork_ids: []
+  - wall_id: R6-E
+    candidate_artwork_ids: []
+  - wall_id: R7-N
+    candidate_artwork_ids: []
+  - wall_id: R7-S
+    candidate_artwork_ids: []
+  - wall_id: R7-W
+    candidate_artwork_ids: []
+  - wall_id: R7-E
+    candidate_artwork_ids: []
+  arrangements:
+  - id: ARR_R2N_001
+    title: R2-N Generated Arrangement
+    space_id: R2-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.962
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 75.01
+          score: 0.9998
+          importance: 0.9
+        visual_balance:
+          raw: 81.84
+          score: 0.9724
+          importance: 0.8
+        wall_utilization:
+          raw: 77.3
+          score: 0.8905
+          importance: 0.8
+        thematic_cohesion:
+          raw: 58.57
+          score: 0.9829
+          importance: 0.5
+        focal_point:
+          raw: 78.2
+          score: 0.973
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A510
+      x_ft: 4.54
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A154
+      x_ft: 8.12
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A155
+      x_ft: 12.81
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A158
+      x_ft: 16.79
+      y_ft: 5.08
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A513
+      x_ft: 19.41
+      y_ft: 3.9
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A511
+      x_ft: 24.7
+      y_ft: 4.05
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: MET7
+      x_ft: 30.38
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A514
+      x_ft: 34.76
+      y_ft: 5.05
+      locked: false
+      required: false
+      notes: ''
+  - id: ARR_R1N_001
+    title: R1-N Generated Arrangement
+    space_id: R1-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9939
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 95.5
+          score: 0.99
+          importance: 0.9
+        visual_balance:
+          raw: 80.23
+          score: 0.9966
+          importance: 0.8
+        wall_utilization:
+          raw: 70.0
+          score: 1.0
+          importance: 0.8
+        thematic_cohesion:
+          raw: 61.5
+          score: 0.982
+          importance: 0.5
+        focal_point:
+          raw: 80.0
+          score: 1.0
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A156
+      x_ft: 0.4
+      y_ft: 4.3
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A151
+      x_ft: 2.6
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A109
+      x_ft: 5.4
+      y_ft: 5.1
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A155
+      x_ft: 7.0
+      y_ft: 4.6
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A110
+      x_ft: 10.0
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
