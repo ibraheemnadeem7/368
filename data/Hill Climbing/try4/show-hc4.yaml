@@ -1,0 +1,205 @@
+show:
+  id: show-hc4
+  title: hc4 Show
+  subtitle: ''
+  gallery_id: gallery-hc4.yaml
+  scoring_profile_id: scoring-hc4.yaml
+  curator: ''
+  notes: ''
+  wall_designs:
+  - wall_id: R1-N
+    candidate_artwork_ids:
+    - A5
+    - A22
+    - Kenyon-Angels
+    - SKON2
+    - A30
+    - wave_painting
+    - A110
+    - A155
+    - A135
+    - MET6
+    - MET5
+  - wall_id: R1-S
+    candidate_artwork_ids: []
+  - wall_id: R1-W
+    candidate_artwork_ids: []
+  - wall_id: R1-E
+    candidate_artwork_ids: []
+  - wall_id: R2-N
+    candidate_artwork_ids: []
+  - wall_id: R2-S
+    candidate_artwork_ids: []
+  - wall_id: R2-W
+    candidate_artwork_ids: []
+  - wall_id: R2-E
+    candidate_artwork_ids: []
+  - wall_id: R3-N
+    candidate_artwork_ids:
+    - MET6
+    - MET5
+    - A511
+    - A155
+    - A135
+    - A110
+    - SKON2
+    - A22
+    - Kenyon-Angels
+    - A5
+    - A35
+    - A30
+  - wall_id: R3-S
+    candidate_artwork_ids: []
+  - wall_id: R3-W
+    candidate_artwork_ids: []
+  - wall_id: R3-E
+    candidate_artwork_ids: []
+  - wall_id: R4-N
+    candidate_artwork_ids: []
+  - wall_id: R4-S
+    candidate_artwork_ids: []
+  - wall_id: R4-W
+    candidate_artwork_ids: []
+  - wall_id: R4-E
+    candidate_artwork_ids: []
+  - wall_id: R5-N
+    candidate_artwork_ids: []
+  - wall_id: R5-S
+    candidate_artwork_ids: []
+  - wall_id: R5-W
+    candidate_artwork_ids: []
+  - wall_id: R5-E
+    candidate_artwork_ids: []
+  - wall_id: R6-N
+    candidate_artwork_ids: []
+  - wall_id: R6-S
+    candidate_artwork_ids: []
+  - wall_id: R6-W
+    candidate_artwork_ids: []
+  - wall_id: R6-E
+    candidate_artwork_ids: []
+  - wall_id: R7-N
+    candidate_artwork_ids: []
+  - wall_id: R7-S
+    candidate_artwork_ids: []
+  - wall_id: R7-W
+    candidate_artwork_ids: []
+  - wall_id: R7-E
+    candidate_artwork_ids: []
+  arrangements:
+  - id: ARR_R1N_001
+    title: R1-N Generated Arrangement
+    space_id: R1-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9494
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 75.1
+          score: 0.9987
+          importance: 0.9
+        visual_balance:
+          raw: 79.8
+          score: 0.9969
+          importance: 0.8
+        wall_utilization:
+          raw: 94.11
+          score: 0.9178
+          importance: 0.8
+        thematic_cohesion:
+          raw: 75.33
+          score: 0.816
+          importance: 0.5
+        focal_point:
+          raw: 78.2
+          score: 0.973
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A5
+      x_ft: 0.53
+      y_ft: 4.7
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: Kenyon-Angels
+      x_ft: 4.71
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A110
+      x_ft: 10.09
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: SKON2
+      x_ft: 14.47
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+  - id: ARR_R3N_001
+    title: R3-N Generated Arrangement
+    space_id: R3-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9808
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 95.8
+          score: 0.984
+          importance: 0.9
+        visual_balance:
+          raw: 78.58
+          score: 0.9787
+          importance: 0.8
+        wall_utilization:
+          raw: 90.46
+          score: 0.9908
+          importance: 0.8
+        thematic_cohesion:
+          raw: 59.0
+          score: 0.988
+          importance: 0.5
+        focal_point:
+          raw: 83.4
+          score: 0.949
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: SKON2
+      x_ft: 0.76
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A110
+      x_ft: 4.17
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: Kenyon-Angels
+      x_ft: 7.58
+      y_ft: 4.0
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A135
+      x_ft: 11.99
+      y_ft: 4.75
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A35
+      x_ft: 14.4
+      y_ft: 4.96
+      locked: false
+      required: false
+      notes: ''
