@@ -232,6 +232,28 @@ def _place_anchor_centered(wall, ordering, anchor, gap, scoring_data):
     return placements
 
 
+def _place_size_graduated(wall, ordering, gap, scoring_data):
+    """
+    Centered uniform placement with the ordering sorted by width descending,
+    so the row reads as a graceful gradient from largest to smallest.
+
+    Targets the visual problem where annealing leaves the wall left-heavy or
+    right-heavy: the largest piece sits at one extreme, the small works
+    cluster at the other, and all the empty space falls on one side.
+
+    Centring the run on the wall yields equal left/right margins, and the
+    width-descending order produces a natural gradient. Uniform spacing is
+    preserved (delegates to v5._place_uniform), so spacing_regularity is
+    unaffected.
+    """
+    sorted_order = sorted(
+        ordering,
+        key=lambda a: _f(a.get('width_ft')),
+        reverse=True,
+    )
+    return v5._place_uniform(wall, sorted_order, gap, scoring_data)
+
+
 def evaluate_state(state, wall, eligible_pool, scoring_data, evaluate_fn):
     ordering = state['ordering']
     gap = state['gap']
@@ -251,6 +273,9 @@ def evaluate_state(state, wall, eligible_pool, scoring_data, evaluate_fn):
     p_anchor_centered = _place_anchor_centered(wall, ordering, anchor, gap, scoring_data)
     if p_anchor_centered:
         candidates.append(p_anchor_centered)
+    p_size_graduated = _place_size_graduated(wall, ordering, gap, scoring_data)
+    if p_size_graduated:
+        candidates.append(p_size_graduated)
 
     dup_pen = NEAR_DUPLICATE_PENALTY * _near_duplicate_pairs(ordering)
     underfill_pen = _underfill_penalty(ordering, wall, scoring_data)
