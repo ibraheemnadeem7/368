@@ -36,11 +36,10 @@ SEED = 42
 
 def _hill_climb(initial_state, wall, eligible, scoring_data, rng):
     cur = initial_state
-    cur_steer, cur_placements, cur_real = evaluate_state(
+    cur_steer, cur_placements, _ = evaluate_state(
         cur, wall, eligible, scoring_data, evaluate
     )
     best_steer = cur_steer
-    best_real = cur_real
     best_placements = cur_placements
 
     stall = 0
@@ -52,22 +51,19 @@ def _hill_climb(initial_state, wall, eligible, scoring_data, rng):
         if cand is None:
             stall += 1
             continue
-        cand_steer, cand_placements, cand_real = evaluate_state(
+        cand_steer, cand_placements, _ = evaluate_state(
             cand, wall, eligible, scoring_data, evaluate
         )
         if cand_steer > cur_steer + 1e-6:
-            cur, cur_steer, cur_placements, cur_real = (
-                cand, cand_steer, cand_placements, cand_real,
-            )
-            if cur_real > best_real:
-                best_real = cur_real
+            cur, cur_steer, cur_placements = cand, cand_steer, cand_placements
+            if cur_steer > best_steer:
                 best_steer = cur_steer
                 best_placements = cur_placements
             stall = 0
         else:
             stall += 1
 
-    return best_steer, best_real, best_placements
+    return best_steer, best_placements
 
 
 def generate(wall, artworks, scoring_data):
@@ -83,7 +79,7 @@ def generate(wall, artworks, scoring_data):
     if len(initial['ordering']) < 2:
         return seed_placements or []
 
-    _, _, best_placements = _hill_climb(initial, wall, artworks, scoring_data, rng)
+    _, best_placements = _hill_climb(initial, wall, artworks, scoring_data, rng)
 
     if not best_placements:
         return seed_placements or []

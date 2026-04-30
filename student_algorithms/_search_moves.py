@@ -23,6 +23,14 @@ from student_algorithms import wall_greedy_v5 as v5
 COVERAGE_WEIGHT = 0.10         # bonus for using more of the wall
 NEAR_DUPLICATE_PENALTY = 0.25  # subtracted per detected near-duplicate pair
 THEME_OVERLAP_THRESHOLD = 0.5  # jaccard threshold for "near duplicate"
+UNDERFILL_WEIGHT = 0.05        # per-work shortfall vs. target count for the wall
+TINY_WORK_PENALTY = 0.04       # per artwork whose width < TINY_RATIO * wall_w
+TINY_RATIO = 0.04
+ORIENTATION_BONUS = 0.04       # awarded when >= 80% share orientation, else penalty
+SCALE_SPREAD_PENALTY = 0.05    # applied when max_width / median_width > SCALE_RATIO
+SCALE_RATIO = 4.0
+
+
 
 
 def _f(v, default=0.0):
@@ -34,6 +42,57 @@ def _f(v, default=0.0):
 
 def _norm_str(s):
     return ''.join(ch.lower() for ch in (s or '') if ch.isalnum())
+
+
+def _target_count(wall, scoring_data):
+    wall_w = _f(wall.get('width_ft'))
+    hc = scoring_data.get('scoring', {}).get('hard_constraints', {})
+    min_n = int(hc.get('min_artworks', {}).get('value', 2) or 2)
+    max_n = int(hc.get('max_artworks', {}).get('value', 8) or 8)
+    target = round(wall_w / 6.0)
+    return max(min_n, min(max_n, target))
+
+
+def _underfill_penalty(ordering, wall, scoring_data):
+    target = _target_count(wall, scoring_data)
+    short = max(0, target - len(ordering))
+    return UNDERFILL_WEIGHT * short
+
+
+def _tiny_work_penalty(ordering, wall):
+    wall_w = _f(wall.get('width_ft'))
+    if wall_w <= 0:
+        return 0.0
+    threshold = wall_w * TINY_RATIO
+    tiny = sum(1 for a in ordering if _f(a.get('width_ft')) < threshold)
+    return TINY_WORK_PENALTY * tiny
+
+
+def _orientation_term(ordering):
+    if len(ordering) < 3:
+        return 0.0
+    counts = {}
+    for a in ordering:
+        o = a.get('orientation') or 'unknown'
+        counts[o] = counts.get(o, 0) + 1
+    dominant = max(counts.values()) / len(ordering)
+    if dominant >= 0.8:
+        return ORIENTATION_BONUS
+    if dominant < 0.6:
+        return -ORIENTATION_BONUS
+    return 0.0
+
+
+def _scale_spread_penalty(ordering):
+    widths = sorted(_f(a.get('width_ft')) for a in ordering if _f(a.get('width_ft')) > 0)
+    if len(widths) < 3:
+        return 0.0
+    median = widths[len(widths) // 2]
+    if median <= 0:
+        return 0.0
+    if widths[-1] / median > SCALE_RATIO:
+        return SCALE_SPREAD_PENALTY
+    return 0.0
 
 
 def _theme_overlap(a, b):
@@ -193,8 +252,11 @@ def evaluate_state(state, wall, eligible_pool, scoring_data, evaluate_fn):
     if p_anchor_centered:
         candidates.append(p_anchor_centered)
 
-    dup_pairs = _near_duplicate_pairs(ordering)
-    dup_pen = NEAR_DUPLICATE_PENALTY * dup_pairs
+    dup_pen = NEAR_DUPLICATE_PENALTY * _near_duplicate_pairs(ordering)
+    underfill_pen = _underfill_penalty(ordering, wall, scoring_data)
+    tiny_pen = _tiny_work_penalty(ordering, wall)
+    orient_term = _orientation_term(ordering)
+    spread_pen = _scale_spread_penalty(ordering)
 
     best_total = -1.0
     best_placements = []
@@ -203,7 +265,15 @@ def evaluate_state(state, wall, eligible_pool, scoring_data, evaluate_fn):
         if result['failed_constraints']:
             continue
         coverage = _coverage(placements, wall, ordering)
-        adjusted = result['total'] + COVERAGE_WEIGHT * coverage - dup_pen
+        adjusted = (
+            result['total']
+            + COVERAGE_WEIGHT * coverage
+            + orient_term
+            - dup_pen
+            - underfill_pen
+            - tiny_pen
+            - spread_pen
+        )
         if adjusted > best_total:
             best_total = adjusted
             best_placements = placements
@@ -283,17 +353,26 @@ def move_add(state, full_pool, wall, scoring_data, rng):
     wall_w = _f(wall.get('width_ft'))
     mn, _ = v5._gap_bounds(scoring_data)
     used_width = sum(_f(a.get('width_ft')) for a in state['ordering'])
-    span_with = used_width + (len(state['ordering']) + 1) * state['gap']
+
+    # Try the current gap; if nothing fits, fall back to the minimum gap so
+    # `add` can still fire when a wide gap was eating all the headroom.
+    new_gap = state['gap']
+    span_with = used_width + (len(state['ordering']) + 1) * new_gap
     headroom = wall_w - mn - span_with
-    pool = [a for a in pool if _f(a.get('width_ft')) <= max(headroom, 0.0)]
-    if not pool:
+    fitting = [a for a in pool if _f(a.get('width_ft')) <= max(headroom, 0.0)]
+    if not fitting and new_gap > mn + 1e-6:
+        new_gap = mn
+        span_with = used_width + (len(state['ordering']) + 1) * new_gap
+        headroom = wall_w - mn - span_with
+        fitting = [a for a in pool if _f(a.get('width_ft')) <= max(headroom, 0.0)]
+    if not fitting:
         return None
 
-    new_art = rng.choice(pool)
+    new_art = rng.choice(fitting)
     insert_at = rng.randrange(len(state['ordering']) + 1)
     new_order = list(state['ordering'])
     new_order.insert(insert_at, new_art)
-    return {'ordering': new_order, 'gap': state['gap']}
+    return {'ordering': new_order, 'gap': new_gap}
 
 
 _MOVE_FNS = {

@@ -41,12 +41,11 @@ SEED = 42
 
 def _anneal(initial_state, wall, eligible, scoring_data, rng):
     cur = initial_state
-    cur_steer, cur_placements, cur_real = evaluate_state(
+    cur_steer, cur_placements, _ = evaluate_state(
         cur, wall, eligible, scoring_data, evaluate
     )
     best = cur
     best_steer = cur_steer
-    best_real = cur_real
     best_placements = cur_placements
 
     T = T0
@@ -58,30 +57,27 @@ def _anneal(initial_state, wall, eligible, scoring_data, rng):
         if cand is None:
             T *= ALPHA
             continue
-        cand_steer, cand_placements, cand_real = evaluate_state(
+        cand_steer, cand_placements, _ = evaluate_state(
             cand, wall, eligible, scoring_data, evaluate
         )
         delta = cand_steer - cur_steer
         if delta > 0 or rng.random() < math.exp(delta / max(T, 1e-9)):
-            cur, cur_steer, cur_placements, cur_real = (
-                cand, cand_steer, cand_placements, cand_real,
-            )
-            if cur_real > best_real:
+            cur, cur_steer, cur_placements = cand, cand_steer, cand_placements
+            if cur_steer > best_steer:
                 best = cur
                 best_steer = cur_steer
-                best_real = cur_real
                 best_placements = cur_placements
         T *= ALPHA
 
-    return best, best_steer, best_real, best_placements
+    return best, best_steer, best_placements
 
 
 def _polish(state, wall, eligible, scoring_data, rng):
     cur = state
-    cur_steer, cur_placements, cur_real = evaluate_state(
+    cur_steer, cur_placements, _ = evaluate_state(
         cur, wall, eligible, scoring_data, evaluate
     )
-    best_real = cur_real
+    best_steer = cur_steer
     best_placements = cur_placements
     stall = 0
     for _ in range(POLISH_ITERS):
@@ -92,20 +88,18 @@ def _polish(state, wall, eligible, scoring_data, rng):
         if cand is None:
             stall += 1
             continue
-        cand_steer, cand_placements, cand_real = evaluate_state(
+        cand_steer, cand_placements, _ = evaluate_state(
             cand, wall, eligible, scoring_data, evaluate
         )
         if cand_steer > cur_steer + 1e-6:
-            cur, cur_steer, cur_placements, cur_real = (
-                cand, cand_steer, cand_placements, cand_real,
-            )
-            if cur_real > best_real:
-                best_real = cur_real
+            cur, cur_steer, cur_placements = cand, cand_steer, cand_placements
+            if cur_steer > best_steer:
+                best_steer = cur_steer
                 best_placements = cur_placements
             stall = 0
         else:
             stall += 1
-    return best_real, best_placements
+    return best_steer, best_placements
 
 
 def generate(wall, artworks, scoring_data):
@@ -133,7 +127,7 @@ def generate(wall, artworks, scoring_data):
     for k in range(3):
         anneal_rng = random.Random(SEED + 17 * (k + 1))
         polish_rng = random.Random(SEED + 31 * (k + 1))
-        anneal_state, _, _, _ = _anneal(initial, wall, artworks, scoring_data, anneal_rng)
+        anneal_state, _, _ = _anneal(initial, wall, artworks, scoring_data, anneal_rng)
         polish_score, polish_placements = _polish(
             anneal_state, wall, artworks, scoring_data, polish_rng
         )
