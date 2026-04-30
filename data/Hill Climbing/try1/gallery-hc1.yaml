@@ -1,0 +1,512 @@
+schema_version: "2.0"
+
+gallery:
+  id: "gund_second_floor"
+  name: "The Gund Second Floor"
+  subtitle: "7-room model inside 88 ft by 66 ft 8 in footprint"
+  location: "The Gund at Kenyon College"
+  notes: "Architectural model of the gallery area only, based on annotated plan and preliminary observation. Dimensions and door offsets are approximate and should be refined from site measurements."
+
+  rooms:
+    - id: "R1"
+      name: "Entry Room"
+      width_ft: 18
+      height_ft: 66.67
+      ceiling_height_ft: 12
+      notes: "Long room along the east side of the gallery footprint, adjacent to the stair connection."
+
+      walls:
+        - id: "R1-N"
+          label: "North Wall"
+          orientation: "north"
+          length_ft: 18
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R1-S"
+          label: "South Wall"
+          orientation: "south"
+          length_ft: 18
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R1-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 66.67
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: "Interior wall facing the main gallery spaces."
+
+        - id: "R1-E"
+          label: "East Boundary Wall"
+          orientation: "east"
+          length_ft: 66.67
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: false
+          default_hang_y_ft: 5.5
+          finish: "service_boundary"
+          notes: "Boundary toward the stair / circulation side."
+
+    - id: "R2"
+      name: "North Room"
+      width_ft: 40
+      height_ft: 24
+      ceiling_height_ft: 12
+      notes: "Large room along the north side of the gallery footprint."
+
+      walls:
+        - id: "R2-N"
+          label: "North Boundary Wall"
+          orientation: "north"
+          length_ft: 40
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R2-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 40
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R2-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R2-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+    - id: "R3"
+      name: "Northeast Interior Room"
+      width_ft: 16
+      height_ft: 18
+      ceiling_height_ft: 12
+      notes: "Interior room between the north room and the entry room."
+
+      walls:
+        - id: "R3-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 16
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R3-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 16
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R3-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 18
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R3-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 18
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+    - id: "R4"
+      name: "Central Room"
+      width_ft: 22
+      height_ft: 24
+      ceiling_height_ft: 12
+      notes: "Interior central room."
+
+      walls:
+        - id: "R4-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R4-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R4-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R4-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+    - id: "R5"
+      name: "Northwest Room"
+      width_ft: 22
+      height_ft: 24
+      ceiling_height_ft: 12
+      notes: "Room in the northwest portion of the gallery footprint."
+
+      walls:
+        - id: "R5-N"
+          label: "North Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R5-S"
+          label: "South Interior Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R5-W"
+          label: "West Boundary Wall"
+          orientation: "west"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R5-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 24
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+    - id: "R6"
+      name: "Southwest Room"
+      width_ft: 22
+      height_ft: 20
+      ceiling_height_ft: 12
+      notes: "Room in the southwest portion of the gallery footprint."
+
+      walls:
+        - id: "R6-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R6-S"
+          label: "South Boundary Wall"
+          orientation: "south"
+          length_ft: 22
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R6-W"
+          label: "West Boundary Wall"
+          orientation: "west"
+          length_ft: 20
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R6-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 20
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+    - id: "R7"
+      name: "South Room"
+      width_ft: 40
+      height_ft: 20
+      ceiling_height_ft: 12
+      notes: "Long room along the south-central portion of the gallery footprint."
+
+      walls:
+        - id: "R7-N"
+          label: "North Interior Wall"
+          orientation: "north"
+          length_ft: 40
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R7-S"
+          label: "South Boundary Wall"
+          orientation: "south"
+          length_ft: 40
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R7-W"
+          label: "West Interior Wall"
+          orientation: "west"
+          length_ft: 20
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+        - id: "R7-E"
+          label: "East Interior Wall"
+          orientation: "east"
+          length_ft: 20
+          height_ft: 12
+          thickness_ft: 0.5
+          displayable: true
+          default_hang_y_ft: 5.5
+          finish: "gallery_wall"
+          notes: ""
+
+  doors:
+    - id: "D1"
+      name: "R2-R1"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R2"
+        wall_id: "R2-E"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R1"
+        wall_id: "R1-W"
+        offset_ft: 20
+
+    - id: "D2"
+      name: "R2-R3"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R2"
+        wall_id: "R2-S"
+        offset_ft: 25
+      endpoint_b:
+        room_id: "R3"
+        wall_id: "R3-N"
+        offset_ft: 8
+
+    - id: "D3"
+      name: "R4-R3"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R4"
+        wall_id: "R4-E"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R3"
+        wall_id: "R3-W"
+        offset_ft: 10
+
+    - id: "D4"
+      name: "R2-R4"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R2"
+        wall_id: "R2-S"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R4"
+        wall_id: "R4-N"
+        offset_ft: 5
+
+    - id: "D5"
+      name: "R2-R5"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R2"
+        wall_id: "R2-W"
+        offset_ft: 8
+      endpoint_b:
+        room_id: "R5"
+        wall_id: "R5-E"
+        offset_ft: 8
+
+    - id: "D6"
+      name: "R5-R6"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R5"
+        wall_id: "R5-S"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R6"
+        wall_id: "R6-N"
+        offset_ft: 10
+
+    - id: "D7"
+      name: "R4-R7"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R4"
+        wall_id: "R4-S"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R7"
+        wall_id: "R7-N"
+        offset_ft: 10
+
+    - id: "D8"
+      name: "R7-R1"
+      width_ft: 6
+      height_ft: 8
+      type: "open_passage"
+      endpoint_a:
+        room_id: "R7"
+        wall_id: "R7-E"
+        offset_ft: 10
+      endpoint_b:
+        room_id: "R1"
+        wall_id: "R1-W"
+        offset_ft: 40
+
+    - id: "D9"
+      name: "R1-Exterior"
+      width_ft: 6
+      height_ft: 8
+      type: "door"
+      endpoint_a:
+        room_id: "R1"
+        wall_id: "R1-E"
+        offset_ft: 20
+      endpoint_b:
+        room_id: "R1"
+        wall_id: "R1-E"
+        offset_ft: 25
+
+  windows: []
+
+  layout_defaults:
+    min_gap_ft: 0.30
+    ideal_gap_ft: 0.55
+    max_gap_ft: 0.95
+    snap_to_grid_ft: 0.01
+    no_overlap: true
+    stay_within_space: true
+    allow_vertical_offset: false
+    allow_stacking: false

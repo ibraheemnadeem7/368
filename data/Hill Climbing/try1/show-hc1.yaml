@@ -1,0 +1,252 @@
+show:
+  id: show-hc1
+  title: hc1 Show
+  subtitle: ''
+  gallery_id: gallery-hc1.yaml
+  scoring_profile_id: scoring-hc1.yaml
+  curator: ''
+  notes: ''
+  wall_designs:
+  - wall_id: R1-N
+    candidate_artwork_ids:
+    - A1
+    - A5
+    - A8
+    - Kenyon-Angels
+    - A27
+    - SKON2
+    - A30
+    - A35
+    - '19023'
+    - colorado_springs_sunset
+    - A9
+    - wave_painting
+    - A102
+    - A101
+    - A100
+    - A103
+    - A104
+    - A105
+    - A108
+    - A107
+    - A106
+    - A113
+    - A114
+    - A112
+    - A109
+    - A110
+    - A111
+  - wall_id: R1-S
+    candidate_artwork_ids: []
+  - wall_id: R1-W
+    candidate_artwork_ids: []
+  - wall_id: R1-E
+    candidate_artwork_ids: []
+  - wall_id: R2-N
+    candidate_artwork_ids:
+    - A1
+    - A9
+    - colorado_springs_sunset
+    - wave_painting
+    - A100
+    - A101
+    - A102
+    - A103
+    - A104
+    - A105
+    - A108
+    - A107
+    - A106
+    - A112
+    - A113
+    - A114
+    - A120
+    - A119
+    - A118
+    - A122
+    - A123
+    - A121
+    - A124
+    - A125
+    - A126
+    - A129
+    - A132
+    - A131
+    - A134
+    - A135
+    - A133
+  - wall_id: R2-S
+    candidate_artwork_ids: []
+  - wall_id: R2-W
+    candidate_artwork_ids: []
+  - wall_id: R2-E
+    candidate_artwork_ids: []
+  - wall_id: R3-N
+    candidate_artwork_ids: []
+  - wall_id: R3-S
+    candidate_artwork_ids: []
+  - wall_id: R3-W
+    candidate_artwork_ids: []
+  - wall_id: R3-E
+    candidate_artwork_ids: []
+  - wall_id: R4-N
+    candidate_artwork_ids: []
+  - wall_id: R4-S
+    candidate_artwork_ids: []
+  - wall_id: R4-W
+    candidate_artwork_ids: []
+  - wall_id: R4-E
+    candidate_artwork_ids: []
+  - wall_id: R5-N
+    candidate_artwork_ids: []
+  - wall_id: R5-S
+    candidate_artwork_ids: []
+  - wall_id: R5-W
+    candidate_artwork_ids: []
+  - wall_id: R5-E
+    candidate_artwork_ids: []
+  - wall_id: R6-N
+    candidate_artwork_ids: []
+  - wall_id: R6-S
+    candidate_artwork_ids: []
+  - wall_id: R6-W
+    candidate_artwork_ids: []
+  - wall_id: R6-E
+    candidate_artwork_ids: []
+  - wall_id: R7-N
+    candidate_artwork_ids: []
+  - wall_id: R7-S
+    candidate_artwork_ids: []
+  - wall_id: R7-W
+    candidate_artwork_ids: []
+  - wall_id: R7-E
+    candidate_artwork_ids: []
+  arrangements:
+  - id: ARR_R1N_001
+    title: R1-N Generated Arrangement
+    space_id: R1-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9531
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 82.26
+          score: 0.9093
+          importance: 0.9
+        visual_balance:
+          raw: 78.91
+          score: 0.9836
+          importance: 0.8
+        wall_utilization:
+          raw: 90.44
+          score: 0.9911
+          importance: 0.8
+        thematic_cohesion:
+          raw: 54.8
+          score: 0.9376
+          importance: 0.5
+        focal_point:
+          raw: 84.4
+          score: 0.934
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A35
+      x_ft: 0.86
+      y_ft: 4.96
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: wave_painting
+      x_ft: 2.83
+      y_ft: 5.08
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A110
+      x_ft: 5.22
+      y_ft: 4.25
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A105
+      x_ft: 9.36
+      y_ft: 4.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A109
+      x_ft: 12.0
+      y_ft: 5.1
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A5
+      x_ft: 14.34
+      y_ft: 4.7
+      locked: false
+      required: false
+      notes: ''
+  - id: ARR_R2N_001
+    title: R2-N Generated Arrangement
+    space_id: R2-N
+    status: generated
+    notes: ''
+    score:
+      total: 0.9827
+      failed_constraints: []
+      criteria:
+        spacing_regularity:
+          raw: 95.35
+          score: 0.993
+          importance: 0.9
+        visual_balance:
+          raw: 80.58
+          score: 0.9913
+          importance: 0.8
+        wall_utilization:
+          raw: 68.2
+          score: 0.973
+          importance: 0.8
+        thematic_cohesion:
+          raw: 64.0
+          score: 0.952
+          importance: 0.5
+        focal_point:
+          raw: 80.0
+          score: 1.0
+          importance: 0.4
+      warnings: []
+    placements:
+    - artwork_id: A134
+      x_ft: 0.22
+      y_ft: 3.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A1
+      x_ft: 6.61
+      y_ft: 4.45
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A135
+      x_ft: 8.71
+      y_ft: 4.75
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A113
+      x_ft: 11.11
+      y_ft: 2.5
+      locked: false
+      required: false
+      notes: ''
+    - artwork_id: A108
+      x_ft: 17.5
+      y_ft: 1.5
+      locked: false
+      required: false
+      notes: ''
